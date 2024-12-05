@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+    <style>
+        body {
+            background-color: darkslategray;
+            color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+  <div class="main">
+    <h1 style="text-align: center;">Image Changer</h1>
+    <div class="imageContainer">
+        <img style="border: 3px yellow solid;border-radius: 10px;" height="300px" width="400px" src="https://plus.unsplash.com/premium_photo-1671734045770-4b9e1a5e53a0?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <h2 style="color: wheat;font: size 30px;;text-align: center;">London</h2>
+    </div>
+  </div>
+  <script>
+   
+//    getting all required Elements
+  let img = document.querySelector("img");
+  let h2 =  document.querySelector("h2")
+  let prevSrc = img.src
+  let h2text = h2.textContent
+
+// creating events 
+
+// Event  = chnaging images and city name on hover 
+  img.addEventListener("mouseover",()=>{
+    img.src = "https://plus.unsplash.com/premium_photo-1697730221799-f2aa87ab2c5d?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    h2.textContent = "Sydney"
+    img.style.border = "3px teal solid"
+  })
+  img.addEventListener("mouseout",()=>{
+    img.src = "https://plus.unsplash.com/premium_photo-1671734045770-4b9e1a5e53a0?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    h2.textContent = h2text
+    img.style.border =  "3px yellow solid"
+  })
+  </script>
+</body>
+</html>
